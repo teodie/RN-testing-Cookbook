@@ -6,12 +6,17 @@ type ActionButtonType = {
   buttonColor: string,
   textColor: string,
   border?: boolean
+  action?: () => void 
 }
 
-const ActionButton = ( {label, buttonColor, textColor, border = false} : ActionButtonType) => {
+const ActionButton = ({ label, buttonColor, textColor, border = false, action }: ActionButtonType) => {
   return (
-    <TouchableOpacity className="border min-h-14 rounded-full items-center justify-center" style={{backgroundColor: buttonColor, borderWidth: border ? 1 : 0}}>
-      <Text style={{color: textColor}} className='text-xl font-semibold'>{label}</Text>
+    <TouchableOpacity
+      className="border min-h-14 rounded-full items-center justify-center"
+      style={{ backgroundColor: buttonColor, borderWidth: border ? 1 : 0 }}
+      onPress={action}
+    >
+      <Text style={{ color: textColor }} className='text-xl font-semibold'>{label}</Text>
     </TouchableOpacity>
   )
 }
