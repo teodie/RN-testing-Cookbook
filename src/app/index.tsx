@@ -1,10 +1,10 @@
 import { SafeAreaView } from "react-native-safe-area-context";
-import HomeScreen from "../screens/HomeScreen";
+import LoginScreen from "../screens/LoginScreen";
 
 export default function Home() {
   return (
-    <SafeAreaView>
-      <HomeScreen />
+    <SafeAreaView className="flex-1">
+      <LoginScreen />
     </SafeAreaView>
   )
 }
